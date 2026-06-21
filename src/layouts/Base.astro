@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Helmward — the agent operating system',
+  description = 'Helmward runs your whole fleet of AI agents from one cockpit — Claude as the brain, your local agents as the hands. A real, local-first agent OS.',
+  image = '/og.png',
+  article = false,
+  publishedTime,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" type="application/rss+xml" title="Helmward" href={new URL('/rss.xml', Astro.site).href} />
+
+  <meta property="og:type" content={article ? 'article' : 'website'} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Helmward" />
+  {article && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="theme-color" content="#08070d" />
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="/"><span class="mark"></span> Helmward</a>
+      <span class="sp"></span>
+      <a class="link" href="/#how">How it works</a>
+      <a class="link" href="/manifesto">Manifesto</a>
+      <a class="link" href="/blog">Blog</a>
+      <a class="btn primary" href="/#waitlist">Get early access</a>
+    </nav>
+
+    <slot />
+
+    <footer>
+      <a class="brand" style="font-size:15px" href="/"><span class="mark" style="width:22px;height:22px"></span> Helmward</a>
+      <span class="sp"></span>
+      <span>© {new Date().getFullYear()} Helmward · the agent operating system</span>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  ...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
+  author: { '@type': 'Organization', name: post.data.author },
+  publisher: { '@type': 'Organization', name: 'Helmward' },
+};
+---
+<Base
+  title={`${post.data.title} — Helmward`}
+  description={post.data.description}
+  article={true}
+  publishedTime={post.data.pubDate.toISOString()}
+>
+  <article class="post">
+    <a class="back" href="/blog">← All posts</a>
+    <div class="meta">{fmt(post.data.pubDate)} · {post.data.author}</div>
+    <h1>{post.data.title}</h1>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</Base>

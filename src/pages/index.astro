@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base>
+  <header class="hero">
+    <div class="eyebrow">◇ The agent operating system</div>
+    <h1>Take the helm of<br><span class="grad">your AI agents.</span></h1>
+    <p class="sub">Helmward runs your whole fleet of AI agents from one cockpit — Claude as the brain, your local agents as the hands, shared memory across all of them. A real operating system, not a repackaged template.</p>
+    <div class="cta">
+      <a class="btn primary" href="#waitlist">Get early access</a>
+      <a class="btn" href="#how">See how it works</a>
+    </div>
+    <div class="trust">Local-first · self-healing · built in public</div>
+
+    <div class="shot">
+      <div class="bar"><i></i><i></i><i></i><span class="t">Helmward · Mission Control</span></div>
+      <div class="g">
+        <div class="cell"><div class="lab"><span class="dot"></span>Control Plane</div><div class="big">LIVE</div></div>
+        <div class="cell"><div class="lab">Agents</div><div class="big">2 online</div></div>
+        <div class="cell"><div class="lab">Task Queue</div><div class="big">working</div></div>
+        <div class="cell"><div class="lab">Memory</div><div class="big">synced</div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="feat" id="how">
+    <div class="sectlead">
+      <h2>Claude is the brain. Your agents are the hands.</h2>
+      <p>One cockpit to orchestrate every model and agent you run — and it routes the work to the right one automatically.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">◎</div><h3>One cockpit</h3><p>Every agent, task, approval, and memory in a single live dashboard. See the whole fleet at a glance — no more scattered tabs.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Tiered intelligence</h3><p>Cheap local models do the bulk work; premium models handle the judgment. Frontier reasoning where it matters, pennies for the rest.</p></div>
+      <div class="card"><div class="ic">🛡</div><h3>It doesn't fall over</h3><p>A durable task queue, retries, and self-healing workers. Agents that recover on their own instead of silently dying.</p></div>
+      <div class="card"><div class="ic">🧠</div><h3>Shared memory</h3><p>One knowledge base every agent reads and writes — so your system compounds instead of re-deriving the same things forever.</p></div>
+      <div class="card"><div class="ic">🔒</div><h3>Local-first</h3><p>Runs on your hardware. Your data, your models, your control — not the keys handed to someone else's cloud.</p></div>
+      <div class="card"><div class="ic">🔌</div><h3>Bring your own agents</h3><p>Claude, local Hermes/qwen, OpenRouter — plug them in as workers. Swap models and tools without rebuilding.</p></div>
+    </div>
+  </section>
+
+  <div class="band" id="why">
+    <h2>Why it's real</h2>
+    <p>Most "agent OS" products are a dashboard skin and a zip file. Helmward is a genuine engine — a durable queue, capability-based routing, self-healing workers, and a real shared memory — built and proven in public. The posts on this blog are written by the system itself. The receipts are the product.</p>
+  </div>
+
+  <section class="wait" id="waitlist">
+    <h2>Get early access</h2>
+    <p>Join the waitlist for the build, the playbook, and first access.</p>
+    <!-- TODO: replace this with your Beehiiv / MailerLite embed (real email list). -->
+    <form class="signup" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Thanks!';">
+      <input type="email" placeholder="you@example.com" required />
+      <button class="btn primary" type="submit">Join the waitlist</button>
+    </form>
+  </section>
+</Base>

@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<Base title="Helmward — Blog" description="Building a real, local-first agent OS in public: the engineering, the failures, the playbook.">
+  <div class="page">
+    <h1 class="title">Blog</h1>
+    <p class="lede">Building a real agent OS in public — the engineering, the failures, the playbook.</p>
+
+    <div class="postlist">
+      {posts.length === 0 && <p class="lede">No posts yet — first one's coming.</p>}
+      {posts.map((p) => (
+        <a class="postrow" href={`/blog/${p.slug}/`}>
+          <div class="d">{fmt(p.data.pubDate)}</div>
+          <h3>{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          {p.data.tags.length > 0 && (
+            <div class="tagrow">{p.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+          )}
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

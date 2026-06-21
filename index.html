@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helmward — Take the helm of your AI agents</title>
+<meta name="description" content="Helmward is the local-first operating system for your fleet of AI agents — Claude as the brain, your local agents as the hands, one cockpit for everything. A real agent OS: durable, self-healing, your data stays yours." />
+<style>
+  :root{
+    --bg:#08070d; --panel:#14111f; --panel2:#1a1628; --raise:#211b33;
+    --border:#251f38; --border2:#2f2747; --text:#ece8f6; --muted:#9990b3; --dim:#645c80;
+    --accent:#8b5cf6; --accent2:#c084fc; --online:#34d399;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 50px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:radial-gradient(1100px 560px at 72% -8%,#1a1033 0%,var(--bg) 55%);
+    color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  /* nav */
+  nav{display:flex;align-items:center;gap:14px;padding:22px 0;}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:.2px;font-size:18px;}
+  .mark{width:28px;height:28px;border-radius:9px;background:conic-gradient(from 210deg,#8b5cf6,#c084fc,#6366f1,#8b5cf6);box-shadow:0 0 0 1px rgba(139,92,246,.3),0 8px 30px rgba(139,92,246,.18);}
+  nav .sp{flex:1;}
+  nav a.link{color:var(--muted);font-size:14px;}
+  nav a.link:hover{color:var(--text);}
+  .btn{display:inline-block;font-weight:650;font-size:14px;border-radius:11px;padding:10px 18px;cursor:pointer;border:1px solid var(--border2);color:var(--text);background:var(--raise);}
+  .btn.primary{border:none;color:#0a0a12;background:linear-gradient(90deg,#c084fc,#8b5cf6);}
+  .btn.primary:hover{filter:brightness(1.08);}
+  /* hero */
+  .hero{padding:70px 0 40px;text-align:center;}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);font-weight:700;}
+  h1{font-size:56px;line-height:1.04;letter-spacing:-1.5px;margin:16px 0 0;font-weight:800;}
+  h1 .grad{background:linear-gradient(90deg,#c084fc,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .sub{font-size:19px;color:var(--muted);max-width:680px;margin:20px auto 0;}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+  .trust{margin-top:22px;font-size:13px;color:var(--dim);}
+  /* mock cockpit strip */
+  .shot{margin:46px auto 0;max-width:960px;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(165deg,var(--panel2),var(--panel));}
+  .shot .bar{display:flex;align-items:center;gap:7px;padding:11px 15px;border-bottom:1px solid var(--border);}
+  .shot .bar i{width:10px;height:10px;border-radius:50%;background:#3a3450;display:inline-block;}
+  .shot .bar .t{margin-left:10px;font-size:12px;color:var(--dim);}
+  .shot .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:18px;}
+  .cell{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px;}
+  .cell .lab{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);}
+  .cell .big{font-size:18px;font-weight:700;margin-top:7px;}
+  .cell .dot{width:8px;height:8px;border-radius:50%;background:var(--online);display:inline-block;margin-right:6px;box-shadow:0 0 7px rgba(52,211,153,.8);}
+  @media(max-width:680px){h1{font-size:38px;}.shot .grid{grid-template-columns:repeat(2,1fr);}}
+  /* sections */
+  section.feat{padding:60px 0 10px;}
+  .sectlead{text-align:center;max-width:680px;margin:0 auto 38px;}
+  .sectlead h2{font-size:30px;letter-spacing:-.5px;margin:0 0 10px;}
+  .sectlead p{color:var(--muted);margin:0;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:760px){.cards{grid-template-columns:1fr;}}
+  .card{background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:15px;padding:22px;box-shadow:var(--shadow);}
+  .card .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:rgba(139,92,246,.15);box-shadow:inset 0 0 0 1px rgba(139,92,246,.35);margin-bottom:13px;}
+  .card h3{margin:0 0 7px;font-size:17px;}
+  .card p{margin:0;color:var(--muted);font-size:14.5px;}
+  /* why-real band */
+  .band{margin:64px 0;padding:34px;border:1px solid var(--border2);border-radius:18px;background:linear-gradient(120deg,rgba(139,92,246,.10),rgba(139,92,246,.02));}
+  .band h2{margin:0 0 10px;font-size:26px;letter-spacing:-.4px;}
+  .band p{color:var(--muted);margin:0;max-width:760px;}
+  /* waitlist */
+  .wait{text-align:center;padding:46px 0 30px;}
+  .wait h2{font-size:30px;letter-spacing:-.5px;margin:0 0 10px;}
+  .wait p{color:var(--muted);margin:0 0 22px;}
+  form.signup{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  form.signup input{background:#0c0a14;border:1px solid var(--border2);border-radius:11px;padding:12px 15px;color:var(--text);font:inherit;font-size:15px;min-width:280px;}
+  form.signup input:focus{outline:none;border-color:var(--accent);}
+  footer{border-top:1px solid var(--border);margin-top:50px;padding:26px 0;color:var(--dim);font-size:13px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  footer .sp{flex:1;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="brand"><span class="mark"></span> Helmward</div>
+    <span class="sp"></span>
+    <a class="link" href="#how">How it works</a>
+    <a class="link" href="#why">Why it's real</a>
+    <a class="link" href="/blog">Blog</a>
+    <a class="btn primary" href="#waitlist">Get early access</a>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">◇ The agent operating system</div>
+    <h1>Take the helm of<br><span class="grad">your AI agents.</span></h1>
+    <p class="sub">Helmward runs your whole fleet of AI agents from one cockpit — Claude as the brain, your local agents as the hands, shared memory across all of them. A real operating system, not a repackaged template.</p>
+    <div class="cta">
+      <a class="btn primary" href="#waitlist">Get early access</a>
+      <a class="btn" href="#how">See how it works</a>
+    </div>
+    <div class="trust">Local-first · self-healing · built in public</div>
+
+    <div class="shot">
+      <div class="bar"><i></i><i></i><i></i><span class="t">Helmward · Mission Control</span></div>
+      <div class="grid">
+        <div class="cell"><div class="lab"><span class="dot"></span>Control Plane</div><div class="big">LIVE</div></div>
+        <div class="cell"><div class="lab">Agents</div><div class="big">4 online</div></div>
+        <div class="cell"><div class="lab">Task Queue</div><div class="big">working</div></div>
+        <div class="cell"><div class="lab">Memory</div><div class="big">synced</div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="feat" id="how">
+    <div class="sectlead">
+      <h2>Claude is the brain. Your agents are the hands.</h2>
+      <p>One cockpit to orchestrate every model and agent you run — and it routes the work to the right one automatically.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">◎</div><h3>One cockpit</h3><p>Every agent, task, approval, and memory in a single live dashboard. See the whole fleet at a glance — no more scattered tabs.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Tiered intelligence</h3><p>Cheap local models do the bulk work; premium models handle the judgment. You get frontier reasoning where it matters and pay pennies for the rest.</p></div>
+      <div class="card"><div class="ic">🛡</div><h3>It doesn't fall over</h3><p>A durable task queue, retries, and self-healing workers. Agents that recover on their own instead of silently dying.</p></div>
+      <div class="card"><div class="ic">🧠</div><h3>Shared memory</h3><p>One knowledge base every agent reads and writes — so your system compounds instead of re-deriving the same things forever.</p></div>
+      <div class="card"><div class="ic">🔒</div><h3>Local-first</h3><p>Runs on your hardware. Your data, your models, your control — no handing the keys to someone else's cloud.</p></div>
+      <div class="card"><div class="ic">🔌</div><h3>Bring your own agents</h3><p>Claude, local Hermes/qwen, OpenRouter — plug them in as workers. Swap models and tools without rebuilding.</p></div>
+    </div>
+  </section>
+
+  <div class="band" id="why">
+    <h2>Why it's real</h2>
+    <p>Most "agent OS" products are a dashboard skin and a zip file. Helmward is a genuine engine — a durable queue, capability-based routing, self-healing workers, and a real shared memory — built and proven in public. The content on this site is written by the system itself. The receipts are the product.</p>
+  </div>
+
+  <section class="wait" id="waitlist">
+    <h2>Get early access</h2>
+    <p>Join the waitlist for the build, the playbook, and first access.</p>
+    <form class="signup" onsubmit="event.preventDefault();this.querySelector('input').value='';alert('Thanks — waitlist wiring is a placeholder for now.');">
+      <input type="email" placeholder="you@example.com" required />
+      <button class="btn primary" type="submit">Join the waitlist</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="brand" style="font-size:15px"><span class="mark" style="width:22px;height:22px"></span> Helmward</div>
+    <span class="sp"></span>
+    <span>© 2026 Helmward · the agent operating system</span>
+  </footer>
+
+</div>
+</body>
+</html>
