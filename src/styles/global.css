@@ -99,3 +99,18 @@ article.post h1{font-size:38px;text-align:left;line-height:1.1;margin:0 0 16px;l
 .back{display:inline-block;margin:0 0 18px;color:var(--muted);font-size:14px;}
 
 @media(max-width:760px){h1{font-size:38px;}.cards{grid-template-columns:1fr;}.shot .g{grid-template-columns:repeat(2,1fr);}}
+
+.memory { max-width:860px; margin:0 auto; padding:5rem 1.5rem; }
+.memory .sectlead { text-align:center; margin-bottom:3rem; }
+.memory-tiers { display:flex; flex-direction:column; align-items:center; gap:0; margin:2rem auto; max-width:520px; }
+.tier { background:#161622; border:1px solid #2a2a3a; border-radius:12px; padding:1.5rem 2rem; width:100%; }
+.tier-hot { border-color:#7c3aed; }
+.tier-wiki { border-color:#4f46e5; }
+.tier-session { border-color:#2a2a3a; }
+.tier-label { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#a78bfa; margin-bottom:.5rem; }
+.tier-desc { font-size:.93rem; color:#94a3b8; line-height:1.6; }
+.tier-arrow { font-size:.8rem; color:#4b5563; padding:.6rem 0; text-align:center; }
+.memory-dream { background:#0f0f1a; border:1px solid #7c3aed33; border-radius:12px; padding:2rem; margin-top:2.5rem; max-width:620px; margin-left:auto; margin-right:auto; }
+.dream-label { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#a78bfa; margin-bottom:1rem; }
+.memory-dream p { color:#94a3b8; font-size:.93rem; line-height:1.7; margin-bottom:.75rem; }
+.dream-proof { font-style:italic; color:#6b7280 !important; }
