@@ -1,7 +1,7 @@
 ---
 title: "Building a Two-Model Local Agent Stack — No API Costs Required"
 description: "We broke through the Hermes tool execution wall using Free Claude Code as a proxy layer. Two independent inference endpoints, Claude Code as a backup tool, and a working LearnFast learner view."
-date: 2026-06-27
+pubDate: Jun 27 2026
 tags: ["build-in-public", "helmward", "learnfast", "inference", "fcc", "openrouter", "claude-code"]
 draft: false
 ---
