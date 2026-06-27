@@ -68,3 +68,4 @@ helmward-site/
 - [ ] Add `public/og.png` (1200×630 social preview).
 - [ ] Replace the waitlist form with a real Beehiiv/MailerLite embed.
 - [ ] Add Google Search Console (submit sitemap) + Cloudflare Web Analytics.
+
