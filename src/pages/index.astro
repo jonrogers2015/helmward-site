@@ -74,10 +74,13 @@ import Base from '../layouts/Base.astro';
   <section class="wait" id="waitlist">
     <h2>Get early access</h2>
     <p>Join the waitlist for the build, the playbook, and first access.</p>
-    <!-- TODO: replace this with your Beehiiv / MailerLite embed (real email list). -->
-    <form class="signup" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Thanks!';">
-      <input type="email" placeholder="you@example.com" required />
-      <button class="btn primary" type="submit">Join the waitlist</button>
-    </form>
+    <div class="brevo-embed">
+      <form id="sib-form" method="POST" action="https://8f6dc48a.sibforms.com/serve/MUIFANx_jJd2QAntcTSFyMUCDkHWaJtfi3EAIVwA5zTrd7Cmf8Op00qsn8kZFNse7fQes5o7px2YDfLLGtjgKl_DKGWEGx1qvH3uJSGejg2nXI19aKpSIDugRrHyyQxfEgk1MGZ6p6ifWhec3cRACyJHU_hCfrQFycqztoq2tj1bqGhrf88976Dahl2KDOlQ3x4JpC7_tMFx0-0vfQ==" data-type="subscription" class="signup">
+        <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="you@example.com" required />
+        <button class="btn primary" type="submit">Join the waitlist</button>
+        <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;" />
+        <input type="hidden" name="locale" value="en" />
+      </form>
+    </div>
   </section>
 </Base>
