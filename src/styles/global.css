@@ -55,6 +55,8 @@ section.feat{padding:60px 0 10px;}
 .card .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:rgba(139,92,246,.15);box-shadow:inset 0 0 0 1px rgba(139,92,246,.35);margin-bottom:13px;}
 .card h3{margin:0 0 7px;font-size:17px;}
 .card p{margin:0;color:var(--muted);font-size:14.5px;}
+.badge{display:inline-block;margin-top:0.5rem;padding:0.2rem 0.6rem;font-size:0.75rem;border-radius:999px;font-weight:600;}
+.badge.planned{background:rgba(255,255,255,0.08);color:var(--muted);border:1px solid rgba(255,255,255,0.15);}
 
 .band{margin:64px 0;padding:34px;border:1px solid var(--border2);border-radius:18px;background:linear-gradient(120deg,rgba(139,92,246,.10),rgba(139,92,246,.02));}
 .band h2{margin:0 0 10px;font-size:26px;letter-spacing:-.4px;}
