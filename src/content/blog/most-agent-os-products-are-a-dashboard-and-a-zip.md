@@ -48,7 +48,7 @@ makes it usable past day one is invisible, and invisible doesn't sell a course.
 ## What we're doing instead
 
 Helmward is the engine first: a real task queue, capability-based routing across your models,
-self-healing workers, and a shared memory the whole fleet reads and writes. The dashboard
+independent verification with no model in the checking path, a durable task queue with retries, and capability-based claiming. The dashboard
 sits on top of that, not in place of it.
 
 And we're proving it the only way that counts — in public. The posts on this blog are

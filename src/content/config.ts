@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 
 // Blog content collection. The Agent OS content pipeline publishes by writing a markdown
 // file into src/content/blog/<slug>.md with this frontmatter, committing, and pushing —
-// Cloudflare Pages rebuilds and deploys automatically.
+// Netlify rebuilds and deploys automatically.
 const blog = defineCollection({
   type: 'content',
   schema: z.object({

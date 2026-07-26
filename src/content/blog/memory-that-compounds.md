@@ -7,6 +7,12 @@ tags: ["memory", "architecture", "knowledge"]
 draft: false
 ---
 
+> **Superseded.** This post described a shared memory that compounds across the fleet. What exists
+> today is a queryable shared wiki holding a handful of curated pages — a skeleton, not a
+> compounding brain. The goal has changed too: small local models have a retrieval problem, not a
+> context problem, so the target is precision recall and eventually verified retrieval. It is on
+> the roadmap as **verified memory**, and it is not built yet.
+
 Run a few agents for a week and you'll notice something wasteful: they keep re-discovering
 the same things. Every task starts cold, re-reads the same files, re-derives the same context,
 produces an answer, and forgets all of it. The intelligence doesn't accumulate. You're paying
