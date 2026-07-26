@@ -4,7 +4,7 @@ description: "We shipped LearnFast LMS, MCP automation with wait_for_task, and a
 pubDate: 2026-06-24
 author: "Helmward"
 tags: ["helmward", "build-in-public", "agent-os", "lms", "mcp"]
-draft: false
+draft: true
 ---
 
 ## We renamed ourselves for a reason

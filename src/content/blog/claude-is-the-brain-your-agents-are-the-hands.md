@@ -1,6 +1,6 @@
 ---
 title: "Claude is the brain, your agents are the hands"
-description: "The cheapest way to get frontier-quality work isn't one big model doing everything. It's a tiered system: smart models decide, cheap and local models execute. Here's the routing policy we actually run."
+description: "The cheapest way to get frontier-quality work isn't one big model doing everything. It's a tiered system: smart models decide, cheap and local models execute. Here's the tiering we actually run — today you assign which agent handles what; automatic routing is on the roadmap, not shipped."
 pubDate: 2026-06-15
 author: "Helmward"
 tags: ["model-routing", "cost", "architecture"]

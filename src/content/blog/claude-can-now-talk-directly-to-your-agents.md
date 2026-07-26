@@ -1,6 +1,6 @@
 ---
 title: "Claude can now talk directly to your agents"
-description: "We shipped a Helmward MCP server this week. Claude Desktop connects natively, fires tasks at Apex and Rook, and polls for results without any manual relay."
+description: "We shipped a Helmward MCP server this week. Claude Desktop connects natively, fires tasks at Apex, and polls for results without any manual relay."
 pubDate: 2026-06-21
 author: "Helmward"
 tags: ["helmward", "build-in-public", "mcp", "agent-os"]
@@ -15,7 +15,7 @@ This week we shipped the Helmward MCP server and that relay is gone.
 
 The MCP server is a FastMCP process running on CT201, exposed via Cloudflare tunnel. Claude Desktop connects through mcp-remote. Six tools available natively:
 
-- create_task: fire a task at Apex or Rook
+- create_task: fire a task at Apex
 - wait_for_task: poll until done, no manual checking
 - list_agents: see who is online
 - get_wiki_page: read the knowledge base

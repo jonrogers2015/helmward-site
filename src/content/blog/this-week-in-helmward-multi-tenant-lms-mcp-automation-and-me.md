@@ -4,7 +4,7 @@ description: "Building in public: LearnFast LMS launch, MCP connector updates, a
 pubDate: 2026-06-23
 author: "Helmward"
 tags: ["helmward", "build-in-public", "lms", "mcp", "agents"]
-draft: false
+draft: true
 ---
 
 ## We shipped a full LMS
