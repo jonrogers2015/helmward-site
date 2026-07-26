@@ -1,14 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Manifesto — Helmward" description="What Helmward believes: agents should be yours, the engine should be real, and the proof should be public.">
+<Base title="Manifesto — Helmward" description="What Helmward believes: agents should be yours, an agent's claim isn't proof, and the check should have no model in it.">
   <article class="post">
     <a class="back" href="/">← Home</a>
     <h1>Manifesto</h1>
     <div class="prose">
       <p>AI agents are about to do real work — read your files, run your code, act on your
       behalf. The question that matters isn't which model is smartest this month. It's
-      <strong>who owns the system the agents run inside.</strong></p>
+      <strong>whether you can trust what the agent tells you it did.</strong></p>
+
+      <h2>A claim is not proof</h2>
+      <p>An agent reports success whether or not it succeeded. "Done, tests pass" — when the
+      tests never ran. The failure doesn't throw an error or show up in a log; it looks
+      exactly like success. So in Helmward, an agent's word never finalizes anything. The
+      work is done when an independent check confirms it — running the real command, hashing
+      the real file — with no language model anywhere in the checking path. There's nothing
+      to hallucinate, because the check is deterministic code, not another model's opinion.</p>
 
       <h2>Agents should be yours</h2>
       <p>Not rented in someone else's cloud with your name on the login. Helmward runs on your
@@ -18,18 +26,21 @@ import Base from '../layouts/Base.astro';
       <h2>The engine should be real</h2>
       <p>A genre of products sells "agent operating systems" that are a dashboard and a zip
       file over someone else's harness. We're building the opposite: a durable task queue,
-      routing across your models, self-healing workers, and a shared memory that compounds.
-      The cockpit sits on top of an engine — not in place of one.</p>
+      capability-based task claiming across your own models, and the verification gate wired
+      through the whole thing. The cockpit sits on top of an engine — not in place of one.</p>
 
       <h2>Spend intelligence where it counts</h2>
-      <p>The smartest model plans and decides; cheap and local models do the bulk. You get
-      frontier-quality judgment and pay pennies for everything around it. Brain in the cloud
-      when you want it, hands on your own machines.</p>
+      <p>The smartest model plans and decides; cheap and local models do the bulk. Local
+      models fabricate — that's not a reason to avoid them, it's the reason the gate exists.
+      Verified either way, you get frontier-quality judgment where it matters and pay pennies
+      for everything around it. Brain in the cloud when you want it, hands on your own machines.</p>
 
       <h2>Show the receipts</h2>
-      <p>Anyone can record a slick demo. We build in public — and the posts on this site are
-      produced and published by the system itself. If the work keeps showing up, the engine
-      works. That's the only proof that counts.</p>
+      <p>Anyone can record a slick demo. We build in public — including the bugs. The
+      verification logic isn't a claim on this page; it's a package you can install and read
+      yourself: <code>pip install attested</code>. It ships with the four ways an earlier
+      version of it quietly passed work that never happened, each now a failing-then-fixed
+      test. That's the only kind of proof that counts: the kind you can check.</p>
 
       <p style="margin-top:2em;"><a class="btn primary" href="/#waitlist">Get early access →</a></p>
     </div>

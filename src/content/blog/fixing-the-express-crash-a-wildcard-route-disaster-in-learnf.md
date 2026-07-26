@@ -4,7 +4,7 @@ description: "How a single invalid route pattern caused 3,115 restarts and what 
 pubDate: 2026-07-08
 author: "Helmward"
 tags: ["helmward", "build-in-public", "agent-os", "learnfast", "express"]
-draft: false
+draft: true
 ---
 
 Three days ago, our LearnFast backend went into a death spiral. Not a graceful shutdown. Not a memory leak. But a literal infinite restart loop—**3,115 PM2 restarts** in roughly 38 hours.

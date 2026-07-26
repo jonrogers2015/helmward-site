@@ -1,90 +1,61 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base>
+<Base title="Helmward — verified AI agent execution" description="Helmward runs AI agents on your own hardware and independently verifies their work — nothing is marked done until a check with no model in the loop confirms it.">
   <header class="hero">
     <div class="eyebrow">◇ The agent operating system</div>
-    <h1>Take the helm of<br><span class="grad">your AI agents.</span></h1>
-    <p class="sub">Helmward runs your whole fleet of AI agents from one cockpit — Claude as the brain, your local agents as the hands, shared memory across all of them. A real operating system, not a repackaged template.</p>
+    <h1>Your agents report success.<br><span class="grad">Helmward checks.</span></h1>
+    <p class="sub">AI agents tell you the work is done. Sometimes it isn't — and the failure looks exactly like success. Helmward runs your agents on your own hardware and independently verifies every result. Nothing is marked done until a check with no model in the loop confirms it against reality.</p>
     <div class="cta">
       <a class="btn primary" href="#waitlist">Get early access</a>
       <a class="btn" href="#how">See how it works</a>
     </div>
-    <div class="trust">Local-first · self-healing · built in public</div>
+    <div class="trust">Local-first · independently verified · built in public</div>
 
     <div class="shot">
       <div class="bar"><i></i><i></i><i></i><span class="t">Helmward · Mission Control</span></div>
       <div class="g">
         <div class="cell"><div class="lab"><span class="dot"></span>Control Plane</div><div class="big">LIVE</div></div>
-        <div class="cell"><div class="lab">Agents</div><div class="big">2 online</div></div>
-        <div class="cell"><div class="lab">Task Queue</div><div class="big">working</div></div>
-        <div class="cell"><div class="lab">Memory</div><div class="big">synced</div></div>
+        <div class="cell"><div class="lab">Task</div><div class="big">verifying</div></div>
+        <div class="cell"><div class="lab">Probe</div><div class="big">exit 0</div></div>
+        <div class="cell"><div class="lab">Result</div><div class="big">confirmed</div></div>
       </div>
     </div>
   </header>
 
   <section class="feat" id="how">
     <div class="sectlead">
-      <h2>Claude is the brain. Your agents are the hands.</h2>
-      <p>One cockpit to orchestrate every model and agent you run — and it routes the work to the right one automatically.</p>
+      <h2>An agent's word is a claim, not proof.</h2>
+      <p>Every task runs through the same gate: the agent does the work, then Helmward independently checks the result — running the actual command, hashing the actual file — with no language model anywhere in the checking path. There is nothing to hallucinate, because the check is deterministic code, not another model's opinion.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ic">◎</div><h3>One cockpit</h3><p>Every agent, task, approval, and memory in a single live dashboard. See the whole fleet at a glance — no more scattered tabs.</p></div>
-      <div class="card"><div class="ic">⚡</div><h3>Tiered intelligence</h3><p>Run cheap local models for the bulk of the work and reserve premium models for judgment calls — you choose which agent handles what.</p></div>
-      <div class="card"><div class="ic">🛡</div><h3>It doesn't fall over</h3><p>A durable task queue with retries, plus documented recovery procedures when a worker drops.</p></div>
-      <div class="card"><div class="ic">🧠</div><h3>Shared memory</h3><p>A wiki every agent can read and search on demand — built up over time as you work.</p></div>
-      <div class="card"><div class="ic">🔒</div><h3>Local-first</h3><p>Runs on your hardware. Your data, your models, your control — not the keys handed to someone else's cloud.</p></div>
-      <div class="card"><div class="ic">🔌</div><h3>Bring your own agents</h3><p>Claude, local Hermes/qwen, OpenRouter — plug them in as workers. Swap models and tools without rebuilding.</p></div>
-    </div>
-  </section>
-
-  <section class="roadmap">
-    <div class="sectlead">
-      <h2>Coming soon</h2>
-      <p>These items are planned but not yet built.</p>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="ic">🌐</div><h3>Named Cloudflare tunnel</h3><p>A permanent connection URL instead of one that changes on every restart.</p><div class="badge planned">Planned</div></div>
-      <div class="card"><div class="ic">🎓</div><h3>Certificate generation</h3><p>Auto-generated completion certificates for finished courses.</p><div class="badge planned">Planned</div></div>
-      <div class="card"><div class="ic">✍️</div><h3>Automated content pipeline</h3><p>SEO-aware blog and content generation, currently a manual process.</p><div class="badge planned">Planned</div></div>
-      <div class="card"><div class="ic">🔄</div><h3>Automatic model routing</h3><p>Today you choose which agent handles what; this would route tasks by complexity automatically.</p><div class="badge planned">Planned</div></div>
-      <div class="card"><div class="ic">🏢</div><h3>Multi-tenant hosted version</h3><p>A managed cloud offering for teams who don't want to self-host.</p><div class="badge planned">Planned</div></div>
+      <div class="card"><div class="ic">✓</div><h3>Independent verification</h3><p>The task isn't done when the agent says so. It's done when a probe with no model in the loop confirms it — checks a file's hash, reads a command's real exit code. The agent cannot mark its own work complete.</p></div>
+      <div class="card"><div class="ic">⛒</div><h3>Fails closed</h3><p>If the check can't confirm — empty output, a probe that never ran, a timeout — the result is <em>not verified</em>, never a silent pass. A verifier that green-lights nothing is worse than no verifier at all.</p></div>
+      <div class="card"><div class="ic">◍</div><h3>One control plane</h3><p>Every agent, task, and result in a single live dashboard. A durable task queue with retries, so a dropped worker doesn't lose the work.</p></div>
+      <div class="card"><div class="ic">◆</div><h3>Cheap models, checked hard</h3><p>Run inexpensive local models for the bulk of the work. Local models fabricate — that's exactly why the gate exists. Verified either way, so you don't have to trust the model, only the check.</p></div>
+      <div class="card"><div class="ic">▣</div><h3>Local-first</h3><p>Runs on your hardware. Your data, your models, your control — not the keys handed to someone else's cloud.</p></div>
+      <div class="card"><div class="ic">⧉</div><h3>Bring your own agents</h3><p>Claude, local Hermes/qwen, OpenRouter — plug them in as workers on capability-based task claiming. Swap models without rebuilding.</p></div>
     </div>
   </section>
 
   <div class="band" id="why">
     <h2>Why it's real</h2>
-     <p>Most "agent OS" products are a dashboard skin and a zip file. Helmward is a genuine engine — a durable task queue, capability-based routing, a real approval workflow, and a searchable shared wiki — built and proven in public. The build log behind this site is written as the system is built, not after the fact. The receipts are the product.</p>
+    <p>The verification logic isn't a marketing claim — it's a package you can install today: <code>pip install attested</code>. It fails closed, has zero dependencies, and every one of its checks is covered by tests, including the four ways an earlier version of it quietly passed work that never happened. Helmward is that gate wired into a real engine: a durable task queue, capability-based claiming, and a searchable shared wiki. Built and debugged in public — the build log behind this site is written as the system is built, mistakes included.</p>
   </div>
 
-
-  <section class="memory" id="memory">
+  <section class="roadmap">
     <div class="sectlead">
-      <h2>Your agents remember everything. And get smarter while you sleep.</h2>
-      <p>Every other agent tool starts from zero. You spend the first ten minutes re-explaining your stack, your preferences, your active projects. With Helmward, you just say what you need.</p>
+      <h2>Planned</h2>
+      <p>Honest about what isn't built yet. These are on the roadmap, not shipped.</p>
     </div>
-    <div class="memory-tiers">
-      <div class="tier tier-hot">
-        <div class="tier-label">Hot memory</div>
-        <div class="tier-desc">What every agent knows instantly — your infrastructure, credentials, active project states. Injected into every session automatically. Never re-explain the basics.</div>
-      </div>
-      <div class="tier-arrow">↕ nightly dream promotes up, prunes down</div>
-      <div class="tier tier-wiki">
-        <div class="tier-label">Wiki memory</div>
-        <div class="tier-desc">Full project history, decisions, lessons learned. Every agent reads it on demand. Grows without limit. Searchable by any agent at any time.</div>
-      </div>
-      <div class="tier-arrow">↕ session search retrieves, dream archives</div>
-      <div class="tier tier-session">
-        <div class="tier-label">Session memory</div>
-        <div class="tier-desc">Every conversation, fully searchable. The raw material the dream engine mines each night to find what matters.</div>
-      </div>
-    </div>
-    <div class="memory-dream">
-      <div class="dream-label">Every night at 1am — the Dream</div>
-      <p>Helmward reviews the day, promotes the important facts into agent memory, prunes the noise to the archive, and sends you a report of exactly what was learned. After 30 days your agents know how you work. After 90 days they are tuned to it.</p>
-      <p class="dream-proof">The dream report in your wiki is the receipt. Open it any morning and see exactly what your system learned overnight.</p>
+    <div class="cards">
+      <div class="card"><div class="ic">◈</div><h3>Verified memory</h3><p>A shared wiki agents query on demand exists today. Next: retrieval that confirms a remembered fact is still true before an agent acts on it — precision recall for small local models, which get worse when flooded with context, not better.</p><div class="badge planned">Planned</div></div>
+      <div class="card"><div class="ic">⇄</div><h3>Automatic model routing</h3><p>Today you assign which agent handles what. This would route tasks by complexity automatically.</p><div class="badge planned">Planned</div></div>
+      <div class="card"><div class="ic">▤</div><h3>Automated build log</h3><p>Turning the verified task history into published documentation, automatically — currently a manual process.</p><div class="badge planned">Planned</div></div>
+      <div class="card"><div class="ic">⬡</div><h3>Multi-tenant hosted version</h3><p>A managed cloud offering for teams who don't want to self-host.</p><div class="badge planned">Planned</div></div>
     </div>
   </section>
+
   <section class="wait" id="waitlist">
     <h2>Get early access</h2>
     <p>Join the waitlist for the build, the playbook, and first access.</p>
