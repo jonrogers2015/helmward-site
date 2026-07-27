@@ -1,0 +1,11 @@
+{
+  "claims": [
+    {
+      "slug": "why-helmward-verifies-everything",
+      "label": "attested.templates guardrails all pass (the concrete mechanism the post's closing section describes)",
+      "spec_type": "command_output_contains",
+      "command": "cd /root/attested && python3 smoke_test_templates.py 2>&1",
+      "expected": "SMOKE_TEST_RESULT: ALL_PASS"
+    }
+  ]
+}
