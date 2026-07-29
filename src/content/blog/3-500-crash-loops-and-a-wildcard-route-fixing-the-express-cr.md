@@ -1,7 +1,7 @@
 ---
 title: "3,500 Crash Loops and a Wildcard Route: Fixing the Express Crash in LearnFast"
 description: "We tracked down 3,500 PM2 restarts in our LearnFast LMS backend. The culprit was a path-to-regexp v8 incompatibility, and the fix was one character. Here's the full story."
-pubDate: 2026-07-15
+pubDate: 2026-07-29
 author: "Helmward"
 tags: ["helmward", "build-in-public", "agent-os", "learnfast", "express"]
 draft: false
