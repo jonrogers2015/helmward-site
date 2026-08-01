@@ -4,7 +4,7 @@ description: "We tracked down 3,500 PM2 restarts in our LearnFast LMS backend. T
 pubDate: 2026-07-29
 author: "Helmward"
 tags: ["helmward", "build-in-public", "agent-os", "learnfast", "express"]
-draft: false
+draft: true
 ---
 
 ## 3,500 restarts. One character to fix.
