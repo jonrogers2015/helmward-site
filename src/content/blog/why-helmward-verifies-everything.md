@@ -4,7 +4,7 @@ description: "The verification gate isn't a nice-to-have. Here's what happens wi
 pubDate: 2026-07-27
 author: "Helmward"
 tags: ["verification", "fabrication", "gate", "local-models"]
-draft: true
+draft: false
 ---
 
 Every product decision in Helmward traces back to one observation: unverified, small models don't just make mistakes — they fabricate, confidently and specifically, in ways that are indistinguishable from truth unless something outside the model checks the actual result. This isn't a hypothetical. It's a catalog of what happened on this exact system.
