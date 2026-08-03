@@ -6,6 +6,27 @@
       "spec_type": "command_output_contains",
       "command": "cd /root/attested && python3 smoke_test_templates.py 2>&1",
       "expected": "SMOKE_TEST_RESULT: ALL_PASS"
+    },
+    {
+      "slug": "finding-the-right-sized-model",
+      "label": "gemma4-e4b is registered as a model in llama-swap",
+      "spec_type": "command_output_contains",
+      "command": "curl -s http://192.168.1.180:8081/v1/models",
+      "expected": "gemma4-e4b"
+    },
+    {
+      "slug": "finding-the-right-sized-model",
+      "label": "gemma4-e4b produces a real tool call when directly instructed to use one",
+      "spec_type": "command_output_contains",
+      "command": "curl -s -X POST http://192.168.1.180:8081/v1/chat/completions -H \"Content-Type: application/json\" -d '{\"model\":\"gemma4-e4b\",\"messages\": [{\"role\": \"user\", \"content\": \"Check system status. Use the get_system_status tool.\"}], \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"get_system_status\", \"description\": \"Returns system status.\", \"parameters\": {\"type\": \"object\", \"properties\": {}, \"required\": []}}}], \"tool_choice\": \"auto\"}'",
+      "expected": "tool_calls"
+    },
+    {
+      "slug": "our-mcp-connector",
+      "label": "Helmward API returns task list with capability field",
+      "spec_type": "command_output_contains",
+      "command": "python3 -c \"import urllib.request; data=urllib.request.urlopen('http://127.0.0.1:8080/api/tasks').read().decode(); print('OK' if 'capability' in data else 'FAIL')\"",
+      "expected": "OK"
     }
   ]
 }
