@@ -7,12 +7,12 @@ tags: ["build-in-public", "agent-os", "reliability"]
 draft: false
 ---
 
-> **Superseded.** This post described a self-healing agent OS. That was the wrong frame: when state
-> goes stale nothing crashes, so there is nothing for a repair loop to catch. What it was reaching
-> for is on the roadmap as **verified memory** — checking that a remembered fact is still true
-> before an agent acts on it. That is not built yet either. What ships today is a durable task
-> queue with retries, and an independent verification gate that will not mark work done on an
-> agent's word.
+> **Superseded.** This post used the word "self-healing," which implied a repair loop. The frame
+> was right — checking that your system's picture of reality hasn't drifted before acting on it —
+> but repair loops won't catch silent staleness. What actually works is **verified memory**: when an
+> agent reads a fact, the system confirms it's still true before using it. That ships on the
+> roadmap as a revision. What ships today is a durable task queue with retries, and an
+> independent verification gate that will not mark work done on an agent's word.
 
 There's a wave of "agent OS" videos right now. Most of them are the same thing: a slick
 dashboard, a zip file, and a Discord. The demo looks magical because you never see the part
